@@ -1,0 +1,97 @@
+<!doctype HTML>
+<html lang="en">
+    <head>
+        
+        <!--
+            Copyright 2016 Seldon Technologies Ltd.
+            ​
+            Licensed under the Apache License, Version 2.0 (the "License");
+            you may not use this file except in compliance with the License.
+            You may obtain a copy of the License at
+            ​
+                http://www.apache.org/licenses/LICENSE-2.0
+            ​
+            Unless required by applicable law or agreed to in writing, software
+            distributed under the License is distributed on an "AS IS" BASIS,
+            WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+            See the License for the specific language governing permissions and
+            limitations under the License.
+        -->
+        
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="description" content="Machine Learning to classify Brexit and Remain strings">
+        <meta name="keywords" content="EU,Referendum,Brexit,EU Referendum,Machine Learning,Remain,Britain">
+        <meta name="author" content="Jonathan P. Russell">
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+        <script type="text/javascript" src="scripts/brexitIO.js"></script>
+        
+        <link rel="icon" href="img/favicon.ico">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        
+        <title>The EU Bot</title>
+        
+    </head>
+    
+    <body>
+        
+        <img class="info" id="i-inactive" src="img/info.png">
+        <img class="info" id="i-active" src="img/info-active.png">
+        
+        <div id="about">
+            <br>
+            
+            <h2>The EU Bot:</h2>
+            <h4>A Project by Jonathan Russell</h4>
+            
+            <br>
+            
+            <p>The EU Bot is a program designed to analyse strings, and generate a prediction on whether the string is pro-remain or pro-leave, using speeches from political figures as training data. It was written in two weeks at my work experience at Seldon, thanks to the help of the Seldon team.</p>
+            
+            <br>
+            
+            <h3>Languages and Libraries</h2>
+            
+            <br>
+            
+            <p>The EU Bot is written in Python, using the Scikit-learn Machine Learning library and the Flask library for JQuery Ajax requests, allowing for a presentable web frontend written in HTML, CSS, and Javascript. The program also uses libraries such as NLTK for various smaller, but important tasks such as splitting up a string into sentences.</p>
+            
+            <br>
+            
+            <h3>Read More</h3>
+            
+            <br>
+            
+            <p>You can read about the EU Bot in more detail at my blog post <a href="#">here</a> at seldon.io. The source code is also available <a href="https://github.com/SeldonIO/eubot">here</a> at github, so you can take a look at how I have achieved the EU Bot.</p>
+            
+            <br>
+        </div>
+        
+        <div id="title-bar">
+            <h1 id="bigtitle">THE EU BOT</h1>
+            <h4 id="credit">by Jonathan Russell</h4>
+        </div>
+        
+        <div id="bg"></div>
+        
+        <div id="top">
+            <div id="top-content">
+                <input id="predictTextBox" type="text" placeholder="Enter a statement">
+                <div id="padding"></div>
+                <button onclick="predict()" id="predict" type="submit">Predict!</button>
+            </div>
+        </div>
+        
+        <div id="bottom">
+            <div id="bottom-bar">
+                <h4>The bot thought this statement was: </h4>
+                <h1 class="classifierText" id="remain">REMAIN</h1>
+                <h1 class="classifierText" id="leave">LEAVE</h1>
+                <h1 class="classifierText" id="neutral">NEUTRAL</h1>
+            </div>
+        </div>
+        
+    </body>
+</html>
